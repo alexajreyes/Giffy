@@ -1,0 +1,28 @@
+.gifs {
+  display: flex;
+  border: 1px solid #eee;
+  margin: 16px;
+  color: #eee;
+  text-decoration: none;
+  width: 195px;
+
+  padding: 32px;
+  border-radius: 6px;
+  flex-direction: column;
+}
+
+.gifs img {
+  object-fit: contain;
+}
+.gifs h4 {
+  margin: 0;
+}
+p {
+  font-size: 16px;
+}
+.gif_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
