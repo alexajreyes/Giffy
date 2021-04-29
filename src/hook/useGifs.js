@@ -20,6 +20,7 @@ export function useGifs({ keyword } = { keyword: null }) {
       localStorage.setItem('lastKeyword', keyword)
     })
   }, [keyword, keywordToUse, setGifs])
+  //funcion de la paginación
 
   useEffect(
     function () {

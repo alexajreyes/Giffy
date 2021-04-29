@@ -14,9 +14,15 @@
   width: 50px;
   height: 50px;
 }
-.content-gifs {
-  display: flex;
-  flex-wrap: wrap;
+.ListOfGifs {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 1fr);
+}
+.ListOfGifs-item {
+  background-color: aliceblue;
+  display: inline-block;
+  width: 100%;
 }
 ul {
   list-style: none;
