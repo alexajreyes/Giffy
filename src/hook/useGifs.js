@@ -6,6 +6,7 @@ import '../style/home.css'
 const INITIAL_PAGE = 0
 
 export function useGifs({ keyword } = { keyword: null }) {
+  const [loading, setLoading] = useState(false)
   //estado de la paginacion
   const [page, setPage] = useState(INITIAL_PAGE)
 
@@ -13,13 +14,18 @@ export function useGifs({ keyword } = { keyword: null }) {
   //recuperamos la keyword del localStorage
   const keywordToUse = keyword || localStorage.getItem('lastKeyword')
 
-  useEffect(() => {
-    getGifs({ keyword: keywordToUse }).then(gifs => {
-      setGifs(gifs)
-      //guardamos la keywork en el localStorage
-      localStorage.setItem('lastKeyword', keyword)
-    })
-  }, [keyword, keywordToUse, setGifs])
+  useEffect(
+    function () {
+      setLoading(true)
+      getGifs({ keyword: keywordToUse }).then(gifs => {
+        setGifs(gifs)
+        setLoading(false)
+        //guardamos la keywork en el localStorage
+        localStorage.setItem('lastKeyword', keyword)
+      })
+    },
+    [keyword, keywordToUse, setGifs]
+  )
   //funcion de la paginación
 
   useEffect(

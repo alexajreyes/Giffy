@@ -18,7 +18,7 @@ const fromApiResponseToGifs = Apiresponse => {
 
 export default function getGifs({
   keyword = 'husky',
-  limit = 25,
+  limit = 5,
   page = 0,
 } = {}) {
   const apiURL = `${API_URL}/gifs/search?api_key=${API_KEY}=${keyword}&limit=${limit}&offset=${

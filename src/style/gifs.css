@@ -1,25 +1,20 @@
-.gifs {
+.Gifs {
   display: flex;
+  width: 100%;
+}
+.Gifs-link {
+  display: block;
   border: 1px solid #eee;
-  margin: 16px;
+  margin: 8px;
   color: #eee;
   text-decoration: none;
-  width: 195px;
-
-  padding: 32px;
+  width: 100%;
   border-radius: 6px;
-  flex-direction: column;
+  position: relative;
+  min-height: 200px;
+  overflow: hidden;
 }
 
-.gifs img {
-  object-fit: contain;
-}
-.gifs h4 {
-  margin: 0;
-}
-p {
-  font-size: 16px;
-}
 .gif_content {
   display: flex;
   flex-direction: column;

@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'wouter'
 
-const POPULAR_GIFS = ['The Walking Dead', 'League of Justice', 'gatos']
-
 export default function Categories({ name, option = [] }) {
   return (
     <div>

@@ -4,8 +4,12 @@ import { Link } from 'wouter'
 
 export default function Gif({ id, title, url }) {
   return (
-    <div className="gif_content">
-      <Link href={`/gif/${id}`} className="gifs">
+    <div className="Gifs">
+      <Link
+        href={`/gif/${id}`}
+        className="Gifs-link
+      "
+      >
         <h4>{title}</h4>
         <img src={url} alt={title} />
       </Link>
