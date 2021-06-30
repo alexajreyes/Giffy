@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback } from 'react'
 import { useLocation } from 'wouter'
 import '../style/home.css'
 
@@ -15,10 +15,13 @@ export default function Home() {
   const { gifs } = useGifs()
 
   //----------
-  const handleSubmit = keyword => {
-    //navegar a otra pagina
-    pushLocation(`/search/${keyword}`)
-  }
+  const handleSubmit = useCallback(
+    ({ keyword }) => {
+      //navegar a otra pagina
+      pushLocation(`/search/${keyword}`)
+    },
+    [pushLocation]
+  )
 
   return (
     <div className="content-home">
