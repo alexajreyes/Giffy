@@ -3,15 +3,14 @@ import React, { useState } from 'react'
 function Searchform({ onSubmit }) {
   const [keyword, setKeyword] = useState('')
 
-  //----------
-  const handleSubmit = evt => {
-    evt.preventDefault()
-    //navegar a otra pagina
-    onSubmit({ keyword })
-  }
   const handleChange = evt => {
     //capturamos el vaolor
     setKeyword(evt.target.value)
+  }
+  //----------
+  const handleSubmit = evt => {
+    evt.preventDefault()
+    onSubmit({ keyword })
   }
   return (
     <form onSubmit={handleSubmit}>

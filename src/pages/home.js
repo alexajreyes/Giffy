@@ -25,12 +25,12 @@ export default function Home() {
 
   return (
     <div className="content-home">
-      <Searchform />
+      <Searchform onSubmit={handleSubmit} />
       <h3>Ultima busqueda</h3>
       <div className="container-gifs">
         <ListOfGifs gifs={gifs} />
         {/* <Categories name="tendencias" option={POPULAR_GIFS} /> */}
-        <TrendingSearch onSubmit={handleSubmit} />
+        <TrendingSearch />
       </div>
       <br />
       {/* <button onClick={handleNextPage}>Next page ...</button> */}

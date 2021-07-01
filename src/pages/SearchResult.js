@@ -3,6 +3,7 @@ import ListOfGifs from 'component/ListOfGifs'
 import { useGifs } from 'hook/useGifs'
 import useNearScreen from 'hook/useNearScreen'
 import debounce from 'just-debounce'
+import useSeo from 'hook/useSeo'
 
 export default function SearchResult({ params }) {
   const { keyword } = params
@@ -14,10 +15,9 @@ export default function SearchResult({ params }) {
     once: false,
   })
 
-  // const handleNextPage = () => setPage(prevPage => prevPage + 1)
+  const title = gifs ? `${gifs.length} resultados de ${keyword}` : ''
 
-  // const handleNextPage = () => console.log('next Page')
-
+  useSeo({ title })
   const debounceHandleNextPage = useCallback(
     debounce(() => setPage(prevPage => prevPage + 1), 200),
     []
